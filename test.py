@@ -1,49 +1,44 @@
 
+import pandas as pd
 import numpy as np
-import pandas as pd
-"""
-Map_Size = 5
-map = np.full((Map_Size,Map_Size), "0")
-map[1,1]="1"#@
-map[0,0]="2"#M
+import tensorflow as tf
 
-print(map)
+import tensorflow as tf
 
-def Move_Left(Character_Location):
-        Character = map[Character_Location[0], Character_Location[1]]
-        map[Character_Location[0], Character_Location[1]] = "0"
-        map[Character_Location[0], max(Character_Location[1] - 1, 0)] = Character
+def half(arr):
+    n = tf.shape(arr)[0]
+    keep_n = n - n // 2
+    scores = tf.random.uniform([n])
+    keep_indices = tf.math.top_k(scores, k=keep_n).indices
+    keep_indices = tf.sort(keep_indices)
 
-Move_Left([1,1])
+    return tf.gather(arr, keep_indices)
 
-print(map)"""
-"""
-full = np.full(100, 0)
-print(full)
-print(np.linspace(0,len(full), len(full)).round())
-
-print(
-            "################################################\n"+
-            "################################################\n"+
-            "#################  NOT FOUND  ##################\n"+
-            "################################################\n"+
-            "################################################\n"
-
+population = tf.Variable(
+            tf.random.normal((10,5)),
+            trainable=False,
+            dtype=tf.float32,
         )
-"""
 
+import random
 
-nvda = pd.read_csv("Finance_Data/NVDA.csv")
-# print(nvda.head())
-x = nvda["Date"]
+randnum = random.randint(0,100)
 
-print(x)
+tries = 5
+tries = int(input("How many tries do you want?"))
 
-import pandas as pd
+for z in range(tries):
+    inp = int(input("What is your guess?"))
 
-# Sample DataFrame
-df = pd.DataFrame({'Full_Name': ['John Smith', 'Jane Doe', 'Alex Jones']})
+    if(randnum==inp):
+        print("!!!You Won!!!")
+        break
 
-# Split the string by space and assign to new columns
-df['First_Name'] = df['Full_Name'].str.split(' ', n=1).str[0]
-print(df)
+    elif(randnum<inp):
+        print("The number is smaller, TRY AGAIN")
+
+    elif(randnum>inp):
+        print("The number is bigger, TRY AGAIN")
+
+if(randnum!=inp):
+    print(f"You lost, The number was {randnum}")

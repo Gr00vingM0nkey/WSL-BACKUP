@@ -186,8 +186,6 @@ print(avgspg)
 
 def Plot_Loss():
     fig, ax = plt.subplots()
-    ax.yaxis.set_major_locator(plt.ticker.MaxNLocator(10))
-    #print(history.history)
     ploty = avgspg
     plotx = np.linspace(0, len(avgspg), len(avgspg))
     ax.plot(plotx,ploty)

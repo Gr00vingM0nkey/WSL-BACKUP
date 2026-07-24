@@ -11,7 +11,7 @@ import sys
 
 import tensorflow as tf
 
-TrainData = pd.read_csv("train.csv")
+TrainData = pd.read_csv("Titanic/train.csv")
 
 """if(input("clear plot?") == "y"):""
 with open("plot.txt", "w") as file:
@@ -78,6 +78,7 @@ def cleaner(arr):
     return arr, y_train
 
 x_train,y_train  = cleaner(TrainData)
+print(x_train)
 
 
 if not os.path.exists("plot.txt"):

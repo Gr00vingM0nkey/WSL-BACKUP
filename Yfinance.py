@@ -70,3 +70,4 @@ sqrtnvda = np.array(nvda**.5)
 Graph(x, ["nvda", "sqnvda", "sqrtnvda"], [nvda, sqnvda, sqrtnvda])
 # Graph(cpi["DATE"], cpi["CPIAUCSL"])
 
+print(2010%14)

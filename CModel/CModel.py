@@ -470,7 +470,7 @@ model.compile(
     loss=keras.losses.BinaryCrossentropy, #           
 )
 
-EPOCHS = 500
+EPOCHS = 50000
 
 print("---START---")
 history = model.fit(x_train,y_train, epochs=EPOCHS, verbose=1, validation_split=0.15)
