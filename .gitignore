@@ -1,0 +1,12 @@
+
+# Python cache
+# Secrets
+# Third-party / vendored libraries (not yours)
+# Virtual environments
+*.pyc
+.env
+.venv/
+Main/
+__pycache__/
+gym/
+venv/
