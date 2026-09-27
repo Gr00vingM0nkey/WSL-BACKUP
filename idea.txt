@@ -1,0 +1,1 @@
+Genetic Algorithm instead of weights, use functions and parameterized weigth functions
